@@ -97,7 +97,7 @@ class tobeprocessing:
                 y, _ = self.session.run(None, inp)
                 end_time = time.process_time()
                 print("inference speed : ",(end_time - start_time)*1000,"ms")
-                boxes, polys, mapper = getDetBoxes(y[0, :, :, 0], y[0, :, :, 1], 0.2, 0.2, 0.4)
+                boxes, polys, mapper = getDetBoxes(y[0, :, :, 0], y[0, :, :, 1], 0.2, 0.8, 0.05)
 # =============================================================================
                 boxes = adjustResultCoordinates(boxes, ratio_w, ratio_h)
                 preprocess_img = self.preprocesssing(img)
